@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
-import{Home}from './Home';
-import{Department}from './Department';
-import{Employee}from './Employee';
-import{Navigation}from './Navigation';
+import {Home} from './Home.js';
+import {Department} from './Department';
+import {Employee} from './Employee.js';
+import{Navigation} from './Navigation';
 
 import{BrowserRouter, Route, Routes} from 'react-router-dom';
 
@@ -16,15 +16,13 @@ function App() {
           Web App by Jack
       </h3>
       <Navigation/>
-
+      {/* 路由地址; */}
       <Routes>
-        <Route path='/' component={Home} exact/>
-        <Route path='/department' component={Department} exact/>
-        <Route path='/employee' component={Employee} exact/>
-        
-
-
+        <Route path='/' element={<Home />} exact/>
+        <Route path='/Department' element={<Department />} />
+        <Route path='/Employee' element={<Employee />} />
       </Routes>
+
 
 
       
