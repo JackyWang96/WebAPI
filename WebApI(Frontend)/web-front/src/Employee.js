@@ -30,10 +30,10 @@ export class Employee extends Component{
         this.refreshList();
      }
 
-     deleteDep(empid){
+     deleteEmp(empid){
         console.log(11111)
         if(window.confirm("Are you sure?")){
-            fetch(process.env.REACT_APP_API+'emplpyee/'+empid,{
+            fetch(process.env.REACT_APP_API+'employee/'+empid,{
                 method:"DELETE",
                 headers:{'Accept':'application/json',
             'Content-Type':'application/json'}
@@ -76,7 +76,7 @@ export class Employee extends Component{
                                             Edit
                                         </Button>
 
-                                        <Button className="mr-2" variant="danger" onClick={()=>this.deleteEmp(emp.DepartmentId)}>
+                                        <Button className="mr-2" variant="danger" onClick={()=>this.deleteEmp(emp.EmployeeId)}>
                                             Delete
                                         </Button>
 

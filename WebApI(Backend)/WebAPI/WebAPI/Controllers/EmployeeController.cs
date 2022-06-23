@@ -162,8 +162,12 @@ namespace WebAPI.Controllers
                 try
                 {
                     var httpRequest = HttpContext.Current.Request;
-                    var postedFile = httpRequest.Files[0];
-                    string filename = postedFile.FileName;
+                //只上传第一个图片
+                System.Diagnostics.Debug.WriteLine(httpRequest.Files[0]);
+                var postedFile = httpRequest.Files[0];
+              
+                
+                string filename = postedFile.FileName;
                     var phytsicalPath = HttpContext.Current.Server.MapPath("~/Photos/" + filename);
 
                     postedFile.SaveAs(phytsicalPath);
@@ -172,7 +176,7 @@ namespace WebAPI.Controllers
 
                 catch(Exception)
                     {
-                    return "anonymous.png";
+                return "anonymous.png";
                 }
             }
 

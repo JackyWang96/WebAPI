@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
     <div className="container">
       <h3 className="m-3 d-flex justify-content-center">
-          Web App by Jack
+          Employee Management System
       </h3>
       <Navigation/>
       {/* 路由地址; */}
